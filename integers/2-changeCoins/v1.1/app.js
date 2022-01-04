@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 let console = new Console();
-let amount = +prompt("Dame la cantidad de céntimos: ");
+let amount = +console.readInt("Dame la cantidad de céntimos: ");
 
 const amount50 = amount - amount % 50;
 amount -= amount50;
@@ -29,4 +29,4 @@ let coin2 = amount2 / 2;
 msg +=  coin2 > 0 ? coin2 + " moneda(s) de 2\n" : "";
 
 msg += amount > 0 ? amount + " moneda(s) de 1\n" : "";
-console.log(msg);
+console.writeln(msg);

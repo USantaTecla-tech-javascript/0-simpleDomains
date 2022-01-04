@@ -19,4 +19,4 @@ const console = new Console();
 let number1 = console.readInt("Dame un número: ");
 let number2 = console.readInt("Dame otro número: ");
 let answer = areFriends(number1, number2) ? "SI" : "NO";
-console.log("Los números " + number1 + " y " + number2 + " " + answer + " son mumeros amigos");
+console.writeln("Los números " + number1 + " y " + number2 + " " + answer + " son mumeros amigos");
