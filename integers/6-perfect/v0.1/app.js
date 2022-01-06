@@ -1,5 +1,6 @@
 const { Console } = require("./console");
 
+const console = new Console();
 function isPerfect(number) {
   let acu = 0;
   for (let i = 1; i < number; i++) {
