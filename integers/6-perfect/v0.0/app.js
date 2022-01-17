@@ -1,13 +1,14 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = console.readInt("Dame un número: ");
-let acum = 0;
-for (let i = 1; i < number; i++) {
-  if (number % i == 0) {
-    acum += i;
+const number = console.readInt(`Dame un número positivo: `);
+let sum = 0;
+for(let i=1; i < number; i++){
+  if (number % i === 0){
+    console.writeln(i);
+    sum += i;
   }
 }
-let answer = number == acum ? "SI" : "NO";
-console.writeln("El numero" + " " + number + " " 
-  + answer + " es perfecto");
+console.writeln(sum);
+const isPerfect = sum === number;
+console.writeln(`El número ${number} ${isPerfect ? `si` : `no`} es perfecto`);

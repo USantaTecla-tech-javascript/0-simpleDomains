@@ -25,5 +25,5 @@ function toMorse(sentence) {
 }
 
 const sentence = console.readString("Dime algo: ");
-console.writeln('La frase:\n"' + sentence 
+console.writeln('La frase:"' + sentence 
     + '"\nse traduce a:\n"' + toMorse(sentence) + '"');

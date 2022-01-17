@@ -1,18 +1,16 @@
 const { Console } = require("./console");
 
 const console = new Console();
-function isPerfect(number) {
-  let acu = 0;
-  for (let i = 1; i < number; i++) {
-    if (number % i == 0) {
-      acu += i;
+
+function isPerfect(number){
+  let sum = 0;
+  for(let i=1; i < number; i++){
+    if (number % i === 0){
+      sum += i;
     }
   }
-  return number == acu;
+  return sum === number;
 }
 
-const console = new Console();
-const number = console.readInt("Dame un número: ");
-const answer = number == acum ? "SI" : "NO";
-console.writeln("El numero" + " " + number + " " 
-  + answer + " es perfecto");
+const number = console.readInt(`Dame un número positivo: `);
+console.writeln(`El número ${number} ${isPerfect(number) ? `si` : `no`} es perfecto`);

@@ -16,6 +16,9 @@ function areFriends(number1, number2) {
 }
 
 const console = new Console();
-let number1 = console.readInt("Dame un número: ");
-let number2 = console.readInt("Dame otro número: ");
-console.writeln(`Los números ${number1} y ${number2} ${areFriends(number1, number2) ? `si` : `no`} son amigos`);
+let amount = console.readInt("Dame un número: ");
+for(let i=1; i<=amount; i++){
+  if (i !== sumDivisors(i) && areFriends(i, sumDivisors(i))){
+    console.writeln(`Los números ${i} y ${sumDivisors(i)} son amigos`);
+  }
+}

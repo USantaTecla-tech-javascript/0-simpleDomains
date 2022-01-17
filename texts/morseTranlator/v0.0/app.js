@@ -6,12 +6,12 @@ const LETTERS = [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
 const MORSE = ["/ ", ".- ", "-... ", "-.-. ", "-.. ", ". ", "..-. ", "--. ", ".... "
     , ".. ", ".--- ", "-.- ", ".-.. ", "-- ", "-. ", "--- ", ".--. ", "--.- ", ".-. "
     , "... ", "- ", "..- ", "...- ", ".-- ", "-..- ", "-.-- ", "--.. "];
-const sentence = "que" //console.readString("Dime algo: ");
+const sentence = console.readString("Dime algo: ");
 let message = "";
-for (let i = 0; i < LETTERS.length; i++) {
+for (let i = 0; i < sentence.length; i++) {
     let char = sentence[i];
-    if ('A' < char && char <= 'Z'){
-        char -= 'A' - 'a';
+    if ('A' <= char && char <= 'Z'){
+        char -= toLowerCase(sentence[i]);
     } else if (char < 'a' || 'z' < char) {
         char = ' ';
     }
@@ -21,5 +21,5 @@ for (let i = 0; i < LETTERS.length; i++) {
         }
     }
 }
-console.writeln('La frase:\n"' + sentence
-    + '"\nse traduce a:\n"' + message + '"');
+console.writeln('La frase:"' + sentence
+    + '"\nse traduce a:"' + message + '"');

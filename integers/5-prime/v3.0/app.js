@@ -1,22 +1,44 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = +console.readInt("Dame un numero positivo: ");
-while (!(number > 0)){
-  console.writeln("Por favor, un poquito de su atención!!!");
-  number = +console.readInt("Dame un numero positivo: ");
+
+function isPrime(number) {
+  if (number < 2) {
+    return false;
+  }
+  for (let i = 2; i < number; i++) {
+    if (number % i == 0) {
+      return false;
+    }
+  }
+  return true;
 }
-let answer = "no";
-if (number > 1) {
-  let divisor = 2;
-  while (number % divisor != 0)
-    divisor++;
-  answer = divisor == number ? "si" : "no";
+
+function printRow(number){
+  let msg = ``;
+  if (number === 1){
+    msg += `U\n`;
+  } else if (isPrime(number)){
+    for(let i=0; i<number; i++){
+      msg += `P`;
+    }
+    msg += `\n`;
+  } else {
+    let divisor = 2;
+    while (number % divisor != 0){
+      divisor++;
+    }
+    for(let i=0; i<divisor; i++){
+      for(let j=0; j<number / divisor; j++){
+        msg += `C`;
+      }
+      msg += `\n`;
+    }
+  }
+  console.write(msg);
 }
-console.writeln("El número " + number + " " + answer + " es primo.");
-for (let i = 1; i <= number; i++) {
-  let answer = number % i == 0 ? "si" : "no";
-  if (i != 1 && i != number && number % i == 0)
-    answer += "!!!";
-  console.writeln(i + " " + answer + " es divisor de " + number);
+
+const amount = console.readInt(`Dame un número positivo: `);
+for (let i = 1; i <= amount; i++) {
+  printRow(i);
 }

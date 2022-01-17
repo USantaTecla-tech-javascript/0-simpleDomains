@@ -14,19 +14,15 @@ function isPrime(number) {
   return result;
 }
 
-function sumFirstPrimes(amount){
+function sumPrimes(amount){
   let sum = 0;
-  let number = 1;
-  let primes = 0;
-  do {
-    if (isPrime(number)) {
-      sum += number;
-      primes++;
+  for (let i = 1; i <= amount; i++) {
+    if (isPrime(i)) {
+      sum += i;
     }
-    number++;
-  } while (primes < amount);
+  }
   return sum;
 }
 
 let amount = console.readInt(`Dame un número positivo: `);
-console.writeln(`La suma de los primeros ${amount} primos es ${sumFirstPrimes(amount)}`);
+console.writeln(`La suma de los primos en los primeros ${amount} números es ${sumPrimes(amount)}`);

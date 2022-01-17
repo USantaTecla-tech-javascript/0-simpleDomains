@@ -1,14 +1,17 @@
 const { Console } = require("./console");
 
 const console = new Console();
+
 function print(data, title) {
-  console.writeln("Values " + title + ":");
+  console.writeln("Valores " + title + ":");
   for (let i = 0; i < data.length; i++) {
     console.writeln(data[i]);
   }
 }
 
 function sort(data) {
+  // inserción directa
+
   for (let i = 1; i < data.length; i++) {
     let j = 0;
     while (data[j] < data[i]) {
@@ -24,7 +27,7 @@ function sort(data) {
   }
 }
 
-let measures = [5, 4, 3, 2, 1];
+let measures = [9,2,5,7,1,3,8,0,4,6];
 print(measures, "desordenados");
 sort(measures);
 print(measures, "ordenados");

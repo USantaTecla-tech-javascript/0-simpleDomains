@@ -6,4 +6,4 @@ const divider = console.readInt("Dame el divisor: ");
 const remainder = dividend % divider;
 const integer = dividend - remainder;
 const quotient = integer / divider;
-console.writeln(dividend + " / " + divider + " = " + quotient + " y sobran " + remainder);
+console.writeln(`${dividend} / ${divider} + = ${quotient} y sobran ${remainder}`);

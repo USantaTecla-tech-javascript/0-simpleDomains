@@ -9,6 +9,6 @@ for (let i = 0; i < COINS.length; i++) {
   const remainder = amount - amount % COINS[i];
   amount -= remainder;
   const coins = remainder / COINS[i];
-  msg += coins > 0 ? coins + " moneda(s) de " + COINS[i] + "\n" : "";
+  msg += coins > 0 ? `${coins} moneda(s) de ${COINS[i]}\n` : ``;
 }
-console.writlen(msg);
+console.writeln(msg);

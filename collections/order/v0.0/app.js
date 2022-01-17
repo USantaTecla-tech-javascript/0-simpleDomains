@@ -1,14 +1,16 @@
 const { Console } = require("./console");
 
 const console = new Console();
-function print(data, title) {
-  console.writeln("Values " + title + ":");
+function print(title, data) {
+  console.writeln(`Valores ${title} :`);
   for (let i = 0; i < data.length; i++) {
     console.writeln(data[i]);
   }
 }
 
 function sort(values) {
+  // burbuja
+
   let change;
   do {
     change = false;
@@ -23,7 +25,7 @@ function sort(values) {
   } while (change);
 }
 
-let measures = [5, 4, 3, 2, 1];
-print(measures, "desordenados");
+let measures = [9,2,5,7,1,3,8,0,4,6];
+print("desordenados", measures);
 sort(measures);
-print(measures, "ordenados");
+print("ordenados", measures);

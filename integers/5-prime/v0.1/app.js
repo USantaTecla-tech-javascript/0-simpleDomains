@@ -1,14 +1,19 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = +console.readInt("Dame un número: ");
-let isPrime = false;
-if (number >= 2) {
-  let next = 2;
-  while (number % next != 0) {
-    next++;
+
+function isPrime(number) {
+  let result = false;
+  if (number >= 2) {
+    let next = 2;
+    while (number % next != 0) {
+      next++;
+    }
+    result = number === next;
   }
-  isPrime = number == next;
+  return result;
 }
-let answer = isPrime ? "SI" : "NO";
-console.writeln("El numero " + number + " " + answer + " es primo");
+
+let number = console.readInt("Dame un número: ");
+console.writeln(`El número ${number} ${isPrime(number) ? `si` : `no`} es primo`);
+

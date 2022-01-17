@@ -2,5 +2,4 @@ const { Console } = require("./console");
 
 const console = new Console();
 const number = console.readInt("Escribe un número? ");
-const parity = number & 1 == 1 ? "impar" : "par";
-console.writeln("El numero " + number + " es " + parity);
+console.writeln(`El numero ${number} es ${number % 2 == 0 ? "par" : "impar"}`);

@@ -5,5 +5,5 @@ const number = console.readInt("Dame un número: ");
 let times = 0;
 while (times < 10) {
   times++;
-  console.writeln(number + " * " + times + " = " + (number * times));
+  console.writeln(`${number} * ${times} = ${number * times}`);
 }

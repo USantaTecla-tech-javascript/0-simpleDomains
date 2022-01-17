@@ -1,6 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
+
 function isPrime(number) {
   if (number < 2) {
     return false;
@@ -15,17 +16,16 @@ function isPrime(number) {
 
 function sumFirsPrimes(amount) {
   let sum = 0;
-  let prime = 1;
+  let number = 1;
   for (let i = 0; i < amount; i++) {
-    while (!isPrime(prime)) {
-      prime++;
+    while (!isPrime(number)) {
+      number++;
     }
-    sum += prime;
-    prime++;
+    sum += number;
+    number++;
   }
   return sum;
 }
 
-const MAX = 100;
-console.writeln("La suma de los " + MAX
-  + " primeros primos es " + sumFirsPrimes(MAX));
+let amount = console.readInt(`Dame un número positivo: `);
+console.writeln(`La suma de los primeros ${amount} primos es ${sumFirstPrimes(amount)}`);
