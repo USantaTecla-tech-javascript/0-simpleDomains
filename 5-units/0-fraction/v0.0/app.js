@@ -6,70 +6,81 @@ const SIZE = 3;
 for (let i = 0; i < SIZE; i++) {
   fractions[i] = readFraction();
 }
-let sum = fractions[0];
-let product = fractions[0];
-for (let i = 1; i < fractions.length; i++) {
+let sum = new Fraction(0,1);
+let product = new Fraction(1,1);
+for (let i = 0; i < fractions.length; i++) {
+  console.writeln(`Fracción: ${toStringFraction(fractions[i])} e inversa: ${toStringFraction(reverseFraction(fractions[i]))}`);
   sum = sum.add(fractions[i]);
   product = product.multiply(fractions[i]);
 }
-console.writeln(sum.toString());
-console.writeln(product.toString());
-
-function readFraction() {
-  return new Fraction(
-    console.readInt(`Dame el numerador: `),
-    console.readInt(`Dame el denominador: `));
+console.writeln(`Suma: ${toStringFraction(sum)}`);
+console.writeln(`Producto: ${toStringFraction(product)}`);
+for (let i = 0; i < fractions.length; i++) {
+  console.writeln(`Suma sin ${toStringFraction(fractions[i])}: ${toStringFraction(subtractFractions(sum,fractions[i]))}`);
+  console.writeln(`Producto sin ${toStringFraction(fractions[i])}: ${toStringFraction(divideFractions(product,fractions[i]))}`);
 }
 
-function Fraction(numerator, denominator) {
-  this.numerator = numerator;
-  this.denominator = denominator;
+function readFraction() {
+  return {
+    numerator: console.readInt(`Dame el numerador: `),
+    denominator: console.readInt(`Dame el denominador: `)
+  };
+}
 
-  this.add = function (fraction) {
-    return new Fraction(
-      this.numerator * fraction.denominator + fraction.numerator * this.denominator,
-      this.denominator * fraction.denominator).simplified();
+function addFractions(left, right) {
+  return simplifiedFraction({
+    numerator: left.numerator * right.denominator + right.numerator * left.denominator,
+    denominator: left.denominator * right.denominator
+  });
+}
+
+function simplifiedFraction(fraction) {
+
+  function gcd(a, b) {
+    if (a == b)
+      return a;
+    if (a > b)
+      return gcd(a - b, b);
+    return gcd(a, b - a);
   }
 
-  this.simplified = function () {
+  const divisor = gcd(fraction.numerator, fraction.denominator);
+  return {
+    numerator : fraction.numerator / divisor,
+    denominator : fraction.denominator / divisor
+  };
+}
 
-    function gcd(a, b) {
-      if (a == b)
-        return a;
-      if (a > b)
-        return gcd(a - b, b);
-      return gcd(a, b - a);
-    }
+function subtractFractions(left, right) {
+  return addFractions(left, oppositeFraction(right));
+}
 
-    const divisor = gcd(this.numerator, this.denominator);
-    return new Fraction(this.numerator / divisor, this.denominator / divisor);
+function oppositeFraction(fraction) {
+  return {
+    numerator : -fraction.numerator, 
+    denominator : fraction.denominator
   }
+}
 
-  this.subtract = function (fraction) {
-    return this.add(fraction.opposite());
-  }
+function multiplyFractions(left, right) {
+  return simplifiedFraction({
+    numerator : left.numerator * right.numerator,
+    denominator : left.denominator * right.denominator
+  });
+}
 
-  this.opposite = function () {
-    return new Fraction(-this.numerator, this.denominator);
-  }
+function divideFractions(left, right) {
+  return multiplyFractions(left, reverseFraction(right));
+}
 
-  this.multiply = function (fraction) {
-    return new Fraction(
-      this.numerator * fraction.numerator,
-      this.denominator * fraction.denominator).simplified();
-  }
+function reverseFraction(fraction) {
+  return {
+    numerator : fraction.denominator, 
+    denominator : fraction.numerator
+  };
+}
 
-  this.divide = function (fraction) {
-    return this.multiply(fraction.reverse());
-  }
-
-  this.reverse = function () {
-    return new Fraction(this.denominator, this.numerator);
-  }
-
-  this.toString = function () {
-    return `(${this.numerator}/${this.denominator})`;
-  }
-
+function toStringFraction(fraction) {
+  return `(${fraction.numerator}/${fraction.denominator})`;
 }
 
