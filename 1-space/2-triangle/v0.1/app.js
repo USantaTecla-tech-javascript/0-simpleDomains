@@ -14,23 +14,23 @@ if (sideA >= sideB && sideA >= sideC) {
 }
 let msg = `Los lados ${sideA}, ${sideB} y ${sideC} `;
 const isTriangle = greater < (sideA + sideB + sideC) - greater;
-if (isTriangle) {
-  msg += "NO";
+if (!isTriangle) {
+  msg += "NO ";
 }
 msg += `forman un triangulo`;
 if (isTriangle) {
   msg += ` de tipo`;
   if (sideA == sideB) {
     if (sideA == sideC) {
-      msg += "equilatero";
+      msg += " equilatero";
     } else {
-      msg += "isosceles";
+      msg += " isosceles";
     }
   } else {
     if (sideB == sideC) {
-      msg += "isosceles";
+      msg += " isosceles";
     } else {
-      msg += "escaleno";
+      msg += " escaleno";
     }
   }
 }

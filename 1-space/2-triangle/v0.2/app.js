@@ -13,18 +13,18 @@ if (sideC > greater) {
 }
 let msg = `Los lados ${sideA}, ${sideB} y ${sideC} `;
 const isTriangle = greater < (sideA + sideB + sideC) - greater;
-if (isTriangle) {
-  msg += "NO";
+if (!isTriangle) {
+  msg += "NO ";
 }
 msg += `forman un triangulo`;
 if (isTriangle) {
   msg += ` de tipo`;
   if (sideA == sideB && sideB == sideC) {
-    msg += "equilatero";
+    msg += " equilatero";
   } else if (sideA == sideB || sideB == sideC || sideC == sideA) {
-    msg += "isosceles";
+    msg += " isosceles";
   } else {
-    msg += "escaleno";
+    msg += " escaleno";
   }
 }
 console.writeln(msg);

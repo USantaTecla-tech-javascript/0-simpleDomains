@@ -5,9 +5,9 @@ const side = console.readInt("Dame el lado del cuadrado: ");
 console.writeln(`Perímetro: ${getPerimeter(side)}
 Area: ${getArea(side)}`);
 
-const SIDES = 4;
 
 function getPerimeter(side){
+  const SIDES = 4;
   return side * SIDES;
 }
 
