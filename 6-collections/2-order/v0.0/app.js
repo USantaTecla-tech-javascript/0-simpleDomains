@@ -1,6 +1,10 @@
 const { Console } = require("./console");
 
 const console = new Console();
+let measures = [9,2,5,7,1,3,8,0,4,6];
+print("desordenados", measures);
+sort(measures);
+print("ordenados", measures);
 
 function print(title, data) {
   console.writeln(`Valores ${title} :`);
@@ -23,8 +27,3 @@ function sort(values) {   // bubble sort
     }
   } while (change);
 }
-
-let measures = [9,2,5,7,1,3,8,0,4,6];
-print("desordenados", measures);
-sort(measures);
-print("ordenados", measures);

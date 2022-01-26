@@ -1,6 +1,10 @@
 const { Console } = require("./console");
 
 const console = new Console();
+let measures = [9,2,5,7,1,3,8,0,4,6];
+print(measures, "desordenados");
+sort(measures);
+print(measures, "ordenados");
 
 function print(data, title) {
   console.writeln("Valores " + title + ":");
@@ -28,8 +32,3 @@ function sort(values) { // selection sort
     values[i] = temp;
   }
 }
-
-let measures = [9,2,5,7,1,3,8,0,4,6];
-print(measures, "desordenados");
-sort(measures);
-print(measures, "ordenados");
