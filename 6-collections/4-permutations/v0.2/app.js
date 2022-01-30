@@ -11,7 +11,7 @@ function readData(){
     data[i] = console.readString("Dame un valor (. para finalizar): ");
     i++;
   } while (data[i-1] !== ".");
-  data.splice(data.length - 1, 1);
+  delete data[i];
   return data;
 }
 
