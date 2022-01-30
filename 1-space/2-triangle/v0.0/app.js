@@ -16,4 +16,4 @@ let isosceles = sideA == sideB || sideB == sideC ? "isosceles" : "";
 let scalene = sideA != sideB && sideB != sideC && sideC != sideA ? "escaleno" : "";
 let msgType = equilateral !== "" ? equilateral : isosceles;
 msgType = scalene !== "" ? scalene : msgType;
-console.writeln(`Los lados ${sideA}, ${sideB} y ${sideC} ${isTriangle ? "" : "NO"} forman un triangulo ${isTriangle ? `de tipo ${msgType}` : ""}`);
+console.writeln(`Los lados ${sideA}, ${sideB} y ${sideC}${isTriangle ? "" : " NO"} forman un triangulo ${isTriangle ? `de tipo ${msgType}` : ""}`);
