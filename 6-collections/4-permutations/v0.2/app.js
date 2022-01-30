@@ -1,8 +1,19 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let data = ["a", "b", "c", "d", "e"];
-console.writeln(getRows("Permutación", getPermutations(data)));
+let data = readData();
+printRows("Permutación", getPermutations(data));
+
+function readData(){
+  let data = [];
+  let i = 0;
+  do {
+    data[i] = console.readString("Dame un valor (. para finalizar): ");
+    i++;
+  } while (data[i-1] !== ".");
+  data.splice(data.length - 1, 1);
+  return data;
+}
 
 function getRows(title, [head, ...tail], index = 0) {
   if (head === undefined){
@@ -19,6 +30,9 @@ function getRow(title, [head, ...tail], index = 0) {
 }
 
 function getPermutations(data) {
+  if (data.length === 0){
+    return [];
+  }
   if (data.length === 1){
     return [data];
   }
