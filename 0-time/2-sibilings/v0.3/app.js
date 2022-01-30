@@ -13,8 +13,8 @@ msg += `l año que viene tendrás ${getPlural(previous, `año`)}`;
 console.writeln(msg);
 
 function getPlural(amount, title) {
-  let result = amount;
-  if (amount !== 1){
+  let result = `` + amount;
+  if (amount !== 1) {
     result += `s`;
   }
   return result;
