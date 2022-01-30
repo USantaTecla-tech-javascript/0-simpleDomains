@@ -1,14 +1,14 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number1 = console.readNumber("Dame un número: ");
+const number1 = console.readNumber("Dame un número: ");
 let sum1 = 0;
 for (let i = 1; i < number1; i++) {
   if (number1 % i == 0) {
     sum1 += i;
   }
 }
-let number2 = console.readNumber("Dame otro número: ");
+const number2 = console.readNumber("Dame otro número: ");
 let sum2 = 0;
 for (let i = 1; i < number2; i++) {
   if (number2 % i == 0) {
