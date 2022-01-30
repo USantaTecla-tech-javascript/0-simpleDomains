@@ -1,8 +1,8 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number1 = console.readInt("Dame un número: ");
-let number2 = console.readInt("Dame otro número: ");
+let number1 = console.readNumber("Dame un número: ");
+let number2 = console.readNumber("Dame otro número: ");
 console.writeln(`Los números ${number1} y ${number2} ${areFriends(number1, number2) ? `si` : `no`} son amigos`);
 
 function areFriends(number1, number2) {

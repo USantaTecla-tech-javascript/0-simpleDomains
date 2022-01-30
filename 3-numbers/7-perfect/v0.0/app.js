@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const number = console.readInt(`Dame un número positivo: `);
+const number = console.readNumber(`Dame un número positivo: `);
 let sum = 0;
 for(let i=1; i < number; i++){
   if (number % i === 0){

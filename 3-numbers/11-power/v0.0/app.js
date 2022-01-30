@@ -1,8 +1,8 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const base = console.readInt("Dame una base: ");
-let exponent = console.readInt("Dame un exponente: ");
+const base = console.readNumber("Dame una base: ");
+let exponent = console.readNumber("Dame un exponente: ");
 let inverse = exponent < 0;
 if (inverse) {
   exponent *= -1;

@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let amount = console.readInt("Dame un número: ");
+let amount = console.readNumber("Dame un número: ");
 for(let i=1; i<=amount; i++){
   let sum = 0;
   for (let j = 1; j < i; j++) {

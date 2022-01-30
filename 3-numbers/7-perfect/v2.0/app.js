@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const number = console.readInt(`Dame un número positivo: `);
+const number = console.readNumber(`Dame un número positivo: `);
 console.writeln(`El número ${number} ${isPerfect(number) ? `si` : `no`} es perfecto`);
 
 function isPerfect(number){

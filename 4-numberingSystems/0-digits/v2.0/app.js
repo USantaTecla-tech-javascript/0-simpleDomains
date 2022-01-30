@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = console.readInt("Introduce un número: ");
+let number = console.readNumber("Introduce un número: ");
 let inverse = 0;
   do {
     inverse *= 10;

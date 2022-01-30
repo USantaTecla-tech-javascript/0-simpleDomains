@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let position = console.readInt("Dame una posición: ");
+let position = console.readNumber("Dame una posición: ");
 let fibonacci = 1;
 if (position > 2) {
   let previousPrevious = 1;

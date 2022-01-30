@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let amount = console.readInt("Dame la cantidad de céntimos: ");
+let amount = console.readNumber("Dame la cantidad de céntimos: ");
 
 const amount50 = amount - amount % 50;
 amount = amount - amount50;

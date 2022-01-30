@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = +console.readInt("Dame un número: ");
+let number = +console.readNumber("Dame un número: ");
 console.writeln(`El número ${number} ${isPrime(number) ? `si` : `no`} es primo`);
 
 function isPrime(number) {

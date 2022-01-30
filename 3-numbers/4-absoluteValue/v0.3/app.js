@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const number = console.readInt("Escribe un número? ");
+const number = console.readNumber("Escribe un número? ");
 let absolute = number;
 if (number < 0){
   absolute *= -1;

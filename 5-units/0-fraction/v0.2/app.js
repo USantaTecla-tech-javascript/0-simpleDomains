@@ -79,7 +79,7 @@ for (let i = 0; i < fractions.length; i++) {
 
 function readFraction() {
   return new Fraction(
-    console.readInt(`Dame el numerador: `),
-    console.readInt(`Dame el denominador: `));
+    console.readNumber(`Dame el numerador: `),
+    console.readNumber(`Dame el denominador: `));
 }
 

@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = console.readInt(`Dame un número positivo: `);
+let number = console.readNumber(`Dame un número positivo: `);
 let isPrime = false;
 if (number >= 2) {
   let next = 2;

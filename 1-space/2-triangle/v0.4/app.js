@@ -4,7 +4,7 @@ const console = new Console();
 const SIDES = 3;
 const sides = [];
 for (let i = 0; i < SIDES; i++) {
-  sides[i] = console.readInt(`Dame el ${i}º lado del triangulo: `);
+  sides[i] = console.readNumber(`Dame el ${i}º lado del triangulo: `);
 }
 let msg = `Los lados `;
 for (let i = 0; i < SIDES; i++) {

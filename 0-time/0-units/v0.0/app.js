@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let years = console.readInt("¿Qué años tienes? ");
+let years = console.readNumber("¿Qué años tienes? ");
 let millennia = years / 1000;
 let centuries = millennia * 10;
 let decades = centuries * 10;

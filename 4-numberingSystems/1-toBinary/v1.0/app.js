@@ -15,7 +15,7 @@ function toBinary(number) {
   return binary;
 }
 
-let number = console.readInt(`Dame un número decimal: `);
+let number = console.readNumber(`Dame un número decimal: `);
 console.writeln(`Formato binario de ${number}: ${toBinary(number)}`);
 for(let i=1; i<=5; i++){
   console.writeln(`Formato binario de ${number} << ${i} (${number << i}): ${toBinary(number << i)}`);

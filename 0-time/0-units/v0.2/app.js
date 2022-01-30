@@ -11,7 +11,7 @@ const MINUTES_PER_HOUR = 60;
 const SECONDS_PER_MINUTE = 60;
 
 const console = new Console();
-const years = console.readInt("¿Qué años tienes? ");
+const years = console.readNumber("¿Qué años tienes? ");
 const millennia = years / YEARS_PER_MILLENIA;
 const centuries = millennia * CENTURIES_PER_MILLENIA;
 const decades = centuries * DECADE_PER_CENTURIE;

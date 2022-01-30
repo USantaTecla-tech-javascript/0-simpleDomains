@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const amount = console.readInt(`Dame un número positivo: `);
+const amount = console.readNumber(`Dame un número positivo: `);
 let sum = 0;
 for(let i=1; i<=amount; i++){
   let isPrime = false;

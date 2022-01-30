@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const number = console.readInt("Dame un número: ");
+const number = console.readNumber("Dame un número: ");
 let times = 0;
 do {
   times++;

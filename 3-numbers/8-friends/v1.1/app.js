@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let amount = console.readInt("Dame un número: ");
+let amount = console.readNumber("Dame un número: ");
 for(let i=1; i<=amount; i++){
   if (i !== sumDivisors(i) && areFriends(i, sumDivisors(i))){
     console.writeln(`Los números ${i} y ${sumDivisors(i)} son amigos`);

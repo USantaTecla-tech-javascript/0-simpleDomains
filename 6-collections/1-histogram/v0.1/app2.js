@@ -7,7 +7,7 @@ function readData() {
   let value;
   let i = 0;
   do {
-    value = console.readInt("Dame un número positivo (0 para terminar): ");
+    value = console.readNumber("Dame un número positivo (0 para terminar): ");
     if (value !== 0) {
       data[i] = value;
       i++;

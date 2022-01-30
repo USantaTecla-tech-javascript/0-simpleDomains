@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const number = console.readInt("Dame un número: ");
+const number = console.readNumber("Dame un número: ");
 console.writeln(`${number} * 1 = ${number * 1}`);
 console.writeln(`${number} * 2 = ${number * 2}`);
 console.writeln(`${number} * 3 = ${number * 3}`);

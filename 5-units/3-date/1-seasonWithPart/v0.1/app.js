@@ -1,9 +1,9 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const day = console.readInt(`Escriba un día (1-30): `);
-const month = console.readInt(`Escriba un mes (1-12): `);
-const year = console.readInt(`Escriba un año (1-...): `);
+const day = console.readNumber(`Escriba un día (1-30): `);
+const month = console.readNumber(`Escriba un mes (1-12): `);
+const year = console.readNumber(`Escriba un año (1-...): `);
 let days = (month - 1) * 30 + day;
 let trimester = 0;
 if (80 < days && days <= 350) {

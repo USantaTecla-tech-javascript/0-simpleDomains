@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let amount = console.readInt(`Dame un número positivo: `);
+let amount = console.readNumber(`Dame un número positivo: `);
 console.writeln(`La suma de los primos en los primeros ${amount} números es ${sumPrimes(amount)}`);
 
 function sumPrimes(amount){

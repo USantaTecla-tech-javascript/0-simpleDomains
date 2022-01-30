@@ -1,9 +1,9 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let x = console.readInt("Dame un valor: ");
-let y = console.readInt("Dame otro valor: ");
-let z = console.readInt("Dame el último valor: ");
+let x = console.readNumber("Dame un valor: ");
+let y = console.readNumber("Dame otro valor: ");
+let z = console.readNumber("Dame el último valor: ");
 console.writeln("Estos son tus valores:\n" + 
   "x=" + x + "\n" +
   "y=" + y + "\n" +

@@ -7,5 +7,5 @@ function factorial(number){
 }
 
 const console = new Console();
-let number = console.readInt("Dame un número: ");
+let number = console.readNumber("Dame un número: ");
 console.writeln(`El factorial de ${number} es ${factorial(number)}`);

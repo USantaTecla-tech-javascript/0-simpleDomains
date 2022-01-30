@@ -1,8 +1,8 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const x = console.readInt("Dame la abcisa, x = ");
-const y = console.readInt("Dame la ordenada, y = ");
+const x = console.readNumber("Dame la abcisa, x = ");
+const y = console.readNumber("Dame la ordenada, y = ");
 let msg = `La coordenada (${x}, ${y})`;
 if (quadrant === undefined) {
   msg += ` NO está en ningún`;

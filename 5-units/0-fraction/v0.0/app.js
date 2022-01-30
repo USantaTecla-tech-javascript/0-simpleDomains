@@ -22,8 +22,8 @@ for (let i = 0; i < fractions.length; i++) {
 
 function readFraction() {
   return {
-    numerator: console.readInt(`Dame el numerador: `),
-    denominator: console.readInt(`Dame el denominador: `)
+    numerator: console.readNumber(`Dame el numerador: `),
+    denominator: console.readNumber(`Dame el denominador: `)
   };
 }
 

@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = console.readInt(`Dame un número entero: `);
+let number = console.readNumber(`Dame un número entero: `);
 console.writeln(`Unidades: ${number % 10}\n`);
 number = number / 10;
 console.writeln(`Decenas: ${number % 10}\n`);
