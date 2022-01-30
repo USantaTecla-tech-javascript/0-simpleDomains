@@ -8,8 +8,8 @@ for (let i = 0; i < DIGITS.length; i++) {
 }
 
 function getRightDigit(number, position) {
-  if (position === 1){
-    return number % 10;
-  }
-  return getRightDigit(number / 10, position - 1);
+  return position === 1?
+    number % 10
+  :
+    getRightDigit(number / 10, position - 1);
 }
