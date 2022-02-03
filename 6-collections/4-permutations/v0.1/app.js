@@ -30,6 +30,7 @@ function printRows(title, data) {
 }
 
 function getPermutations(data) {
+  // https://docs.google.com/spreadsheets/d/168EjvHH87VxJNU8ROKz9Unap5Mzteo3fVocu1nJy-I0/edit#gid=00
   if (data.length === 0) {
     return [];
   }
