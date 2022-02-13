@@ -2,6 +2,7 @@ const { Console } = require("./console");
 
 const console = new Console();
 let amount = console.readNumber("Dame la cantidad de céntimos: ");
+
 let amount50 = amount - amount % 50;
 let coins50 = amount50 / 50;
 
