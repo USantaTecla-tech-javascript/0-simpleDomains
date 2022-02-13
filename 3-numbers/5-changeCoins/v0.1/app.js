@@ -3,23 +3,28 @@ const { Console } = require("./console");
 const console = new Console();
 let amount = console.readNumber("Dame la cantidad de céntimos: ");
 
-const amount50 = amount - amount % 50;
+const remainder50 = amount % 50;
+const amount50 = amount - remainder50;
 const coins50 = amount50 / 50;
 
 amount = amount - amount50;
-const amount20 = amount - amount % 20;
+const remainder20 = amount % 20;
+const amount20 = amount - remainder20;
 const coins20 = amount20 / 20;
 
 amount = amount - amount20;
-const amount10 = amount - amount % 10;
+const remainder10 = amount % 10;
+const amount10 = amount - remainder10;
 const coins10 = amount10 / 10;
 
 amount = amount - amount10;
-const amount5 = amount - amount % 5;
+const remainder5 = amount % 5;
+const amount5 = amount - remainder5;
 const coins5 = amount5 / 5;
 
 amount = amount - amount5;
-const amount2 = amount - amount % 2;
+const remainder2 = amount % 2;
+const amount2 = amount - remainder2;
 const coins2 = amount2 / 2;
 
 amount = amount - amount2;
