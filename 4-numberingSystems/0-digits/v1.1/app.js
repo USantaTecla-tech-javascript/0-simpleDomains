@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = +console.readNumber(`Dame un número entero`);
+let number = console.readNumber(`Dame un número entero`);
 console.writeln(`El número ${number} tiene ${getLength(number)} digitos`);
 
 function getLength(number){
