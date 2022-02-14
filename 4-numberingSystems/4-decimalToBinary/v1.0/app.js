@@ -1,7 +1,5 @@
 const { Console } = require("./console");
 
-const { Console } = require("./console");
-
 const console = new Console();
 let number = console.readNumber(`Dame un número decimal: `);
 let binary = "";

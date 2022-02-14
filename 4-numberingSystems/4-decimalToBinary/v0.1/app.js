@@ -9,4 +9,4 @@ x >>= 1;
 let thirdRight = x & 1;
 x >>= 1;
 let fourthRight = x & 1;
-console.writeln(`${firstRight}${secondRight}${thirdRight}${fourthRight}`);
+console.writeln(`Bits: ${firstRight}${secondRight}${thirdRight}${fourthRight}`);
