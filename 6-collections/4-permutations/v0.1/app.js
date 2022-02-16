@@ -7,11 +7,15 @@ printRows("Permutación", getPermutations(data));
 function readData() {
   let data = [];
   let i = 0;
+  let end;
   do {
-    data[i] = console.readString("Dame un valor (. para finalizar): ");
-    i++;
-  } while (data[i - 1] !== ".");
-  delete data[i];
+    const answer = console.readString(`Dame un valor o un punto "." para finalizar la serie: `);
+    end = answer === `.`;
+    if (!end) {
+      data[i] = answer;
+      i++;
+    }
+  } while (!end);
   return data;
 }
 

@@ -5,12 +5,12 @@ const x = console.readNumber("Dame la abcisa, x = ");
 const y = console.readNumber("Dame la ordenada, y = ");
 
 let quadrant;
-if (row != 0 && column != 0) {
+if (x != 0 && y != 0) {
   quadrant = 1;
-  if (column < 0) {
+  if (y < 0) {
     quadrant += 2;
   }
-  if (row > 0 && column < 0 || row < 0 && column > 0) {
+  if (x > 0 && y < 0 || x < 0 && y > 0) {
     quadrant++;
   }
 }

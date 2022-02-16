@@ -4,15 +4,11 @@ let console = new Console();
 console.writeln(getRows("Permutación", getPermutations(readData())));
 
 function readData(){
-  let oneData = readOneData();
+  const oneData = console.readString("Dame un valor (. para finalizar): ");
   return oneData === "." ?
       []
     :
       [oneData].concat(readData());
-
-  function readOneData(){
-    return console.readString("Dame un valor (. para finalizar): ");
-  }
 }
 
 function getRows(title, rows) {

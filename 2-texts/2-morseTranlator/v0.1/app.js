@@ -1,6 +1,10 @@
 const { Console } = require("./console");
 
 const console = new Console();
+const sentence = console.readString("Dime algo: ");
+console.writeln(`La frase "${sentence}"
+se traduce a "${toMorse(sentence)}"`);
+
 function toMorse(sentence) {
     const LETTERS = [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
         , "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -8,9 +12,9 @@ function toMorse(sentence) {
         , ".. ", ".--- ", "-.- ", ".-.. ", "-- ", "-. ", "--- ", ".--. ", "--.- ", ".-. "
         , "... ", "- ", "..- ", "...- ", ".-- ", "-..- ", "-.-- ", "--.. "];
     let message = "";
-    for (let i = 0; i < LETTERS.length; i++) {    
+    for (let i = 0; i < LETTERS.length; i++) {
         let char = sentence[i];
-        if ('A' < char && char <= 'Z'){
+        if ('A' < char && char <= 'Z') {
             char -= 'A' - 'a';
         } else if (char < 'a' || 'z' < char) {
             char = ' ';
@@ -23,7 +27,3 @@ function toMorse(sentence) {
     }
     return message;
 }
-
-const sentence = console.readString("Dime algo: ");
-console.writeln('La frase:"' + sentence 
-    + '"\nse traduce a:\n"' + toMorse(sentence) + '"');

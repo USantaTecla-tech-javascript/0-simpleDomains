@@ -11,5 +11,5 @@ function getRightDigit(number, position) {
   return position === 0?
     number % 10
   :
-    getRightDigit(number / 10, position - 1);
+    getRightDigit((number - number % 10) / 10, position - 1);
 }

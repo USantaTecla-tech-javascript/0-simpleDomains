@@ -3,11 +3,15 @@ const { Console } = require("./console");
 const console = new Console();
 let data = [];
 let i = 0;
+let end;
 do {
-  data[i] = console.readString("Dame un valor (. para finalizar): ");
-  i++;
-} while (data[i - 1] !== ".");
-data.splice(data.length - 1, 1);
+  const answer = console.readString(`Dame un valor o un punto "." para finalizar la serie: `);
+  end = answer === `.`;
+  if (!end) {
+    data[i] = answer;
+    i++;
+  }
+} while (!end);
 let permutations = [];
 if (data.length !== 0) {
   let buffer = data.slice();

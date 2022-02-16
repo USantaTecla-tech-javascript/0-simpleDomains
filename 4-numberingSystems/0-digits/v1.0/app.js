@@ -1,14 +1,15 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let number = console.readNumber(`Dame un número entero`);
+const number = console.readNumber(`Dame un número entero: `);
+let remainder = number;
 let digits = 0;
-while (number > 0) {
-  number -= number % 10;
-  number /= 10;
+while (remainder > 0) {
+  remainder -= remainder % 10;
+  remainder /= 10;
   digits++;
 }
-if (digits === 0){
+if (digits === 0) {
   digits++;
 }
-console.writeln(`El número ${number} tiene ${digits} digito${digits!=1?`s`:``}.`);
+console.writeln(`El número ${number} tiene ${digits} digito${digits != 1 ? `s` : ``}.`);

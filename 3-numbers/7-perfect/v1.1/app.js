@@ -1,7 +1,7 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const position = console.readNumber(`Dame un número positivo: `);
+const position = console.readNumber(`Dame una posición: `);
 let number = 0;
 for(let i=0; i <position; i++){
   number++;

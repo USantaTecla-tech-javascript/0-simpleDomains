@@ -2,20 +2,19 @@ const { Console } = require("./console");
 
 const console = new Console();
 const age = console.readNumber("Dame tu edad: ");
-const previous = age - 1;
-const next = age + 1;
 let msg = `E`;
+const previous = age - 1;
 if (age > 0) {
   msg += `l año pasado tenías ${getPlural(previous, `año`)}
 y e`;
 }
-msg += `l año que viene tendrás ${getPlural(previous, `año`)}`;
+const next = age + 1;
+msg += `l año que viene tendrás ${getPlural(next, `año`)}`;
 console.writeln(msg);
 
 function getPlural(amount, title) {
-  let result = `` + amount;
   if (amount !== 1) {
-    result += `s`;
+    title += `s`;
   }
-  return title+result;
+  return `${amount} ${title}`;
 }

@@ -54,4 +54,5 @@ function Coordinate(x, y) {
   this.equals = function (coordenada) {
     return this.x == coordenada.x && this.y == coordenada.y;
   }
+  
 }

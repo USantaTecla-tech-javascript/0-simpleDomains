@@ -1,23 +1,26 @@
 const { Console } = require("./console");
 
 const console = new Console();
+const AMOUNT = 3;
 let input = console.readString("Introduce 3 palabras separadas por varios espacios: ");
 let msg = ``;
-let iBeginFirstWord = 0;
-for(let j = 0; j<3; j++){
-  while (input[iBeginFirstWord] === ` `) {
-    iBeginFirstWord++;
+let iBeginWord = 0;
+for (let j = 0; j < AMOUNT; j++) {
+  while (input[iBeginWord] === ` `) {
+    iBeginWord++;
   }
-  let iEndFirstWord = iBeginFirstWord + 1;
-  while (input[iEndFirstWord] !== ` ` && iEndFirstWord < input.length) {
-    iEndFirstWord++;
+  let iEndWord = iBeginWord + 1;
+  while (input[iEndWord] !== ` ` && iEndWord < input.length) {
+    iEndWord++;
   }
-  iEndFirstWord--;
-  let msg = ``;
-  for (let i = iBeginFirstWord; i <= iEndFirstWord; i++) {
+  iEndWord--;
+  for (let i = iBeginWord; i <= iEndWord; i++) {
     msg += input[i];
   }
-  iBeginFirstWord = iEndFirstWord + 1;  
+  if (i !== AMOUNT) {
+    msg += ` `;
+  }
+  iBeginWord = iEndWord + 1;
 }
 console.writeln(`.${msg}.`)
 

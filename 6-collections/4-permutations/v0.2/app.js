@@ -2,31 +2,35 @@ const { Console } = require("./console");
 
 const console = new Console();
 let data = readData();
-printRows("Permutación", getPermutations(data));
+console.writeln(printRows("Permutación", getPermutations(data)));
 
-function readData(){
+function readData() {
   let data = [];
   let i = 0;
+  let end;
   do {
-    data[i] = console.readString("Dame un valor (. para finalizar): ");
-    i++;
-  } while (data[i-1] !== ".");
-  delete data[i];
+    const answer = console.readString(`Dame un valor o un punto "." para finalizar la serie: `);
+    end = answer === `.`;
+    if (!end) {
+      data[i] = answer;
+      i++;
+    }
+  } while (!end);
   return data;
 }
 
-function getRows(title, [head, ...tail], index = 0) {
+function printRows(title, [head, ...tail], index = 0) {
   if (head === undefined){
     return ``;
   }
-  return getRow(`${title}-${index}`, head) + getRows(title, tail, index+1);
+  return printRow(`${title}-${index}`, head) + printRows(title, tail, index+1);
 }
 
-function getRow(title, [head, ...tail], index = 0) {
+function printRow(title, [head, ...tail], index = 0) {
   if (head === undefined){
     return `\n`;
   }
-  return `${index === 0? `${title}:` : ``} ${head} ` + getRow(title, tail, index + 1);
+  return `${index === 0? `${title}:` : ``} ${head} ` + printRow(title, tail, index + 1);
 }
 
 function getPermutations(data) {

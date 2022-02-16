@@ -11,7 +11,7 @@ let message = "";
 for (let i = 0; i < sentence.length; i++) {
     let char = sentence[i];
     if ('A' <= char && char <= 'Z'){
-        char -= toLowerCase(sentence[i]);
+        char = toLowerCase(sentence[i]);
     } else if (char < 'a' || 'z' < char) {
         char = ' ';
     }
@@ -21,5 +21,5 @@ for (let i = 0; i < sentence.length; i++) {
         }
     }
 }
-console.writeln('La frase:"' + sentence
-    + '"\nse traduce a:"' + message + '"');
+console.writeln(`La frase "${sentence}"
+se traduce a "${message}"`);
