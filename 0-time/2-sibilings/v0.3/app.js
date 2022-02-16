@@ -17,5 +17,5 @@ function getPlural(amount, title) {
   if (amount !== 1) {
     result += `s`;
   }
-  return result;
+  return title+result;
 }
