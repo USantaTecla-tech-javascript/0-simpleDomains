@@ -2,7 +2,7 @@ const { Console } = require("./console");
 
 const console = new Console();
 let data = readData();
-printRows("Permutación", getPermutations(data));
+printRows(`Permutación`, getPermutations(data));
 
 function readData() {
   let data = [];

@@ -1,10 +1,10 @@
 const { Console } = require("./console");
 
 let console = new Console();
-console.writeln(getRows("Permutación", getPermutations(readData())));
+console.writeln(getRows(`Permutación`, getPermutations(readData())));
 
 function readData(){
-  const oneData = console.readString("Dame un valor (. para finalizar): ");
+  const oneData = console.readString(`Dame un valor o un punto "." para finalizar la serie: `);
   return oneData === "." ?
       []
     :

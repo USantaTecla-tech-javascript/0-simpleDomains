@@ -13,7 +13,7 @@ function readData(){
       [oneData].concat(readData());
 
   function readOneData(){
-    return console.readString(`Dame un valor (. para finalizar): `);
+    return console.readString(`Dame un valor o un punto "." para finalizar la serie`);
   }
 }
 
