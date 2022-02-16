@@ -11,4 +11,4 @@ while (number > 0) {
 if (digits === 0){
   digits++;
 }
-console.writeln(`El número ${number} tiene ${getLength(number)} digitos`);
+console.writeln(`El número ${number} tiene ${digits} digito${digits!=1?`s`:``}.`);
