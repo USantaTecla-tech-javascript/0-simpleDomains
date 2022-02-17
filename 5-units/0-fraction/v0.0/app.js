@@ -6,12 +6,12 @@ const SIZE = 3;
 for (let i = 0; i < SIZE; i++) {
   fractions[i] = readFraction();
 }
-let sum = new Fraction(0,1);
-let product = new Fraction(1,1);
+let sum = newFraction(0,1);
+let product = newFraction(1,1);
 for (let i = 0; i < fractions.length; i++) {
   console.writeln(`Fracción: ${toStringFraction(fractions[i])} e inversa: ${toStringFraction(reverseFraction(fractions[i]))}`);
-  sum = sum.add(fractions[i]);
-  product = product.multiply(fractions[i]);
+  sum = addFractions(sum, fractions[i]);
+  product = multiplyFractions(product, fractions[i]);
 }
 console.writeln(`Suma: ${toStringFraction(sum)}`);
 console.writeln(`Producto: ${toStringFraction(product)}`);
@@ -25,6 +25,13 @@ function readFraction() {
     numerator: console.readNumber(`Dame el numerador: `),
     denominator: console.readNumber(`Dame el denominador: `)
   };
+}
+
+function newFraction(numerator, denominator){
+  return {
+    numerator : numerator,
+    denominator : denominator,
+  }
 }
 
 function addFractions(left, right) {

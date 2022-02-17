@@ -1,8 +1,8 @@
 const { Console } = require("./console");
 
 const console = new Console();
-const number = console.readInt("Dame un número: ");
-console.writeln(`El factorial de ${number} es ${factorial}`);
+const number = console.readNumber("Dame un número: ");
+console.writeln(`El factorial de ${number} es ${factorial(number)}`);
 
 function factorial(number){
   let result = 1;
