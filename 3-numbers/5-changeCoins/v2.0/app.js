@@ -11,42 +11,38 @@ for (let i = 0; i < COINS.length; i++) {
 console.writeln(msg);
 
 function getChangedCoins(value, tab = "  ") {
-  console.writeln(`${tab}coins(${value});`);
   if (value < 5) {
-    console.writeln(`${tab}<= ${value} de 1`);
-    return value;
+    return [0, 0, value];
   }
   if (value === 5) {
-    console.writeln(`${tab}<= 1 de 5`);
-    return 1;
+    return [0, 1, 0];
   }
   if (value < 11) {
-    let x = 1 + getChangedCoins(value - 5, tab + "  ");
-    console.writeln(`${tab}<= ${x} de 5 y el resto de 1`);
-    return x;
+    return [0, 1, value - 5];
   }
   if (value === 11) {
-    console.writeln(`${tab}<= 1 de 11`);
-    return 1
+    return [1, 0, 0];
   }
   let changedCoins = [];
   for (let i = 0; i < COINS.length; i++) {
-    changedCoins[i] = 1 + getChangedCoins(value - COINS[i], tab + "  ");
+    changedCoins[i] = getChangedCoins(value - COINS[i], tab + "  ");
   }
-  let x = min(changedCoins);
-  console.writeln(`${tab}<= ${x} de ...`);
-  return x;
-
-  function min([head, ...tail]) {
-    if (tail.length == 0) {
-      return head;
+  let positionMin = 0;
+  for(let i=1; i<COINS.length; i++){
+    if (sum(changedCoins[i]) < sum(changedCoins[positionMin])){
+      positionMin = i;
     }
-    if (head < min(tail)) {
-      return head;
-    }
-    return min(tail);
   }
+  changedCoins[positionMin][positionMin]++;
+  return changedCoins;
 
+  function sum(numbers){
+    let acc = 0;
+    for(let number of numbers){
+      acc += number;
+    }
+    return acc;
+  }
 }
 
 
