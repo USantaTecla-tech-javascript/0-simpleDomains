@@ -6,8 +6,6 @@ const height = console.readNumber("Dame el alto del rectangulo: ");
 console.writeln(`Perímetro: ${getPerimeter(width, height)}
 Area: ${getArea(width, height)}`);
 
-const SIDES = 4;
-
 function getPerimeter(width, height){
   return 2 * (width + height);
 }

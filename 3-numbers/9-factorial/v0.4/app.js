@@ -6,12 +6,12 @@ console.writeln(`El factorial de ${number} es ${factorial(number)}`);
 
 function factorial(number) {
 
-  function acumFactorial(number, acc) {
+  function accFactorial(number, acc) {
     return number < 1 ?
       acc
       :
-      acumFactorial(number - 1, acc * number);
+      accFactorial(number - 1, acc * number);
   }
 
-  return acumFactorial(number, 1);
+  return accFactorial(number, 1);
 }
