@@ -1,16 +1,12 @@
 const { Console } = require("./console");
 
 const console = new Console();
-let amount = console.readInt("Dame la cantidad de céntimos: ");
+let amount = console.readNumber("Dame la cantidad de céntimos: ");
 const COINS = [11, 5, 1];
-console.writeln(getChangedCoins(amount));
-
+let coins = getChangedCoins(amount);
 let msg = "";
 for (let i = 0; i < COINS.length; i++) {
-  const remainder = amount - amount % COINS[i];
-  amount -= remainder;
-  const coins = remainder / COINS[i];
-  msg += coins > 0 ? `${coins} moneda(s) de ${COINS[i]}\n` : ``;
+  msg += coins > 0 ? `${coins[i]} moneda(s) de ${COINS[i]}\n` : ``;
 }
 console.writeln(msg);
 
