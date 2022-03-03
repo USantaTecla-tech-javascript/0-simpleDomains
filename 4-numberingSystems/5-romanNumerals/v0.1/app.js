@@ -1,24 +1,30 @@
 const { Console } = require("./console");
 
 const console = new Console();
+console.writeln('101 en romano: ' + decimalToRoman(101));
+console.writeln('45 en romano: ' + decimalToRoman(45));
+console.writeln('236 en romano: ' + decimalToRoman(236));
+console.writeln('841 en romano: ' + decimalToRoman(841));
+
 function decimalToRoman(num) {
-    if(num < 1 || num > 999) {
-      return;
-    } else {
-      parseInt(num);
-      let separatedNumbers = splitNumber(num);
-      let codes = [
-        ["M","D","C"],
-        ["C","L","X"],
-        ["X","V","I"]
-      ]
-      let result = "";
-      for(let i = 0; i < separatedNumbers.length; i++) {
-        result += toRomanSystem(codes[i], separatedNumbers[i]);
-      }
-      return result;
-    }
+  if (num < 1 || num > 999) {
+    return;
   }
+  const CODES = [
+    ["M", "D", "C"],
+    ["C", "L", "X"],
+    ["X", "V", "I"]
+  ]
+  const CENTS = 0;
+  const TEENS = 1;
+  const UNITS = 2;
+  
+  let separatedNumbers = splitNumber(num);
+  let result = "";
+  for (let i = 0; i < separatedNumbers.length; i++) {
+    result += toRomanSystem(CODES[i], separatedNumbers[i]);
+  }
+  return result;
 
   function splitNumber(num) {
     let result = [];
@@ -26,43 +32,37 @@ function decimalToRoman(num) {
       let temp = num % 10;
       result.unshift(temp);
       num = parseInt(num / 10);
-    } while(result.length < 3);
+    } while (result.length < CODES.length);
     return result;
   }
 
-  function toRomanSystem(code, num) {
+  function toRomanSystem(codes, digit) {
     let result = "";
-    if(num == 0) {
-      result += "";
-    } else if(num < 5) {
-      result += code[2];
-      if(num >= 2 && num < 4) {
-        result += code[2];
-        if(num == 3) {
-          result += code[2];
+    if (0 < digit && digit <= 4) {
+      result += codes[UNITS];
+      if (digit >= 2 && digit <= 3) {
+        result += codes[UNITS];
+        if (digit == 3) {
+          result += codes[UNITS];
         }
       }
     }
-    if(num >= 4 && num < 9) {
-      result += code[1];
+    if (digit >= 4 && digit < 9) {
+      result += codes[TEENS];
     }
-    if(num > 5) {
-      result += code[2];
-      if(num >= 7 && num < 9) {
-        result += code[2];
-        if(num == 8) {
-          result += code[2];
+    if (digit > 5) {
+      result += codes[UNITS];
+      if (digit >= 7 && digit <= 8) {
+        result += codes[UNITS];
+        if (digit == 8) {
+          result += codes[UNITS];
         }
       }
     }
-    if(num >= 9) {
-      result += code[0];
+    if (digit === 9) {
+      result += codes[CENTS];
     }
     return result;
   }
 
-  console.writeln('101 en romano: ' + decimalToRoman(101));
-  console.writeln('45 en romano: ' + decimalToRoman(45));
-  console.writeln('236 en romano: ' + decimalToRoman(236));
-  console.writeln('841 en romano: ' + decimalToRoman(841));
-  
+}
